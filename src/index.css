@@ -1,0 +1,51 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:#FFFFFF;
+  color:#1B1A18;
+  font-family:'Hanken Grotesk',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:#1B2A4A;color:#F6F2EA}
+input,select,textarea,button{font-family:inherit}
+input:focus,select:focus,textarea:focus{
+  outline:none;
+  border-color:#1B2A4A !important;
+  box-shadow:0 0 0 3px rgba(27,42,74,0.10);
+}
+
+/* hide scrollbar for the banner */
+.kp-scroll::-webkit-scrollbar{height:0;display:none}
+.kp-scroll{scrollbar-width:none;-ms-overflow-style:none}
+
+@keyframes kp-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.kp-fade{animation:kp-rise .45s cubic-bezier(.2,.7,.2,1) both}
+
+@keyframes kp-holo2{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+
+/* ---- hover affordances (replaces the prototype's style-hover) ---- */
+.kp-card-img{transition:transform .25s ease}
+.kp-card-lift:hover .kp-card-img{transform:translateY(-6px)}
+.kp-card-lift-sm:hover .kp-card-img{transform:translateY(-5px)}
+
+.kp-btn-primary{background:#1B2A4A;color:#fff;transition:background .15s}
+.kp-btn-primary:hover{background:#13203a}
+
+.kp-btn-outline{border:1px solid #1B2A4A;background:transparent;color:#1B2A4A;transition:all .15s}
+.kp-btn-outline:hover{background:#1B2A4A;color:#fff}
+
+.kp-btn-outline-soft{border:1px solid #1B2A4A;background:transparent;color:#1B2A4A;transition:background .15s}
+.kp-btn-outline-soft:hover{background:#F0EFEA}
+
+.kp-btn-ghost{border:1px solid #DDDCD6;background:#fff;color:#1B1A18;transition:border-color .15s}
+.kp-btn-ghost:hover{border-color:#1B2A4A}
+
+@media (max-width:880px){
+  .kp-2col{grid-template-columns:1fr !important}
+  .kp-cust{grid-template-columns:1fr !important}
+  .kp-preview{order:-1;position:static !important}
+  .kp-hide-sm{display:none !important}
+  .kp-pad{padding-left:18px !important;padding-right:18px !important}
+  .kp-h1{font-size:44px !important}
+  .kp-arrow{display:none !important}
+}
